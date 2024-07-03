@@ -2,23 +2,19 @@
  * Functional components
  * Class components
  */
-import Footer from "./components/Footer";
-import MyHeader, { SubHeader } from "./components/Header";
+import { useState } from "react";
+import Counter from "./components/Counter";
 
 function App() {
-  var greetings = "Hi";
-
-  function setGreetings() {
-    greetings = "Hi !";
-  }
+  // let greetings = "";
+  const [counter, setCounter] = useState(0);
 
   return (
     <div>
-      <MyHeader />
-      <SubHeader />
-      <p>{greetings}</p>
-      <button onClick={setGreetings}>Greetings</button>
-      <Footer />
+      <button onClick={() => setCounter((prevState) => prevState + 1)}>
+        Greetings
+      </button>
+      <Counter count={counter} />
     </div>
   );
 }
