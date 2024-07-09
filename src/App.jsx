@@ -3,21 +3,18 @@
  * Class components
  */
 import { useState } from "react";
-import Counter from "./components/Counter";
-import ReactCycle from "./components/ClassComp";
+import Destructuring from "./components/Destructuring";
 
 function App() {
-  // let greetings = "";
-  const [counter, setCounter] = useState(0);
-  const [name, setName] = useState("Sanish Manandhar");
-
   return (
     <div>
-      {counter > 0 && <ReactCycle name={name} />}
-      <button onClick={() => setName("New name")}>Greetings</button>
-      <button onClick={() => setCounter(1)}>setCounter</button>
-      <button onClick={() => setCounter(0)}>removeCounter</button>
-      <Counter count={counter} />
+      <Destructuring
+        name="Sanish"
+        email="mail.sanishmanandhar"
+        address="Kathmandu"
+        country="Nepal"
+        state="Bagmati"
+      />
     </div>
   );
 }
